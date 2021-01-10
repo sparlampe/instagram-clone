@@ -56,7 +56,10 @@ struct MainTabView: View {
             }
             .navigationTitle(tabTitle)
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(leading: logoutButton)
+            .navigationBarItems(
+                leading: selectedIndex == 0 ? logoutButton : nil,
+                trailing: selectedIndex == 0 ? messageLink : nil
+            )
             .accentColor(.black)
         }
     }
@@ -67,6 +70,18 @@ struct MainTabView: View {
         } label: {
             Text("Logout").foregroundColor(.black)
         }
+    }
+    
+    var messageLink: some View {
+        NavigationLink(
+            destination: ConversationsView(),
+            label: {
+                Image(systemName: "paperplane")
+                    .resizable()
+                    .font(.system(size: 20, weight: .light))
+                    .scaledToFit()
+                    .foregroundColor(.black)
+            })
     }
     
     var tabTitle: String {

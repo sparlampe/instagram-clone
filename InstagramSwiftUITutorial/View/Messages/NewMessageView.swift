@@ -19,7 +19,19 @@ struct NewMessageView: View {
             SearchBar(text: $searchText, isEditing: .constant(false))
                 .padding()
 
-            UserListView(viewModel: viewModel, searchText: $searchText)
+            VStack(alignment: .leading) {
+                ForEach(searchText.isEmpty ? viewModel.users : viewModel.filteredUsers(searchText)) { user in
+                    HStack { Spacer() }
+                    
+                    Button(action: {
+                        self.show.toggle()
+                        self.startChat.toggle()
+                        self.user = user
+                    }, label: {
+                        UserCell(user: user)
+                    })
+                }
+            }.padding(.leading)
         }
     }
 }
