@@ -10,6 +10,16 @@
 		2338F79A25A9048400A298FA /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F79925A9048400A298FA /* LazyView.swift */; };
 		2338F79D25AA12A900A298FA /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F79C25AA12A900A298FA /* EditProfileView.swift */; };
 		2338F7A025AA16F700A298FA /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F79F25AA16F700A298FA /* EditProfileViewModel.swift */; };
+		2338F7A525AA40C400A298FA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F7A425AA40C400A298FA /* Message.swift */; };
+		2338F7A925AA940100A298FA /* ConversationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F7A825AA940100A298FA /* ConversationsView.swift */; };
+		2338F7AC25AA941700A298FA /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F7AB25AA941700A298FA /* ConversationCell.swift */; };
+		2338F7AF25AA945B00A298FA /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F7AE25AA945B00A298FA /* ChatView.swift */; };
+		2338F7B225AA946800A298FA /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F7B125AA946800A298FA /* ChatBubble.swift */; };
+		2338F7B525AA947600A298FA /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F7B425AA947600A298FA /* MessageView.swift */; };
+		2338F7B825AA94CA00A298FA /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F7B725AA94CA00A298FA /* ConversationsViewModel.swift */; };
+		2338F7BB25AA94DA00A298FA /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F7BA25AA94DA00A298FA /* ChatViewModel.swift */; };
+		2338F7BE25AA954400A298FA /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F7BD25AA954400A298FA /* MessageViewModel.swift */; };
+		2338F7C125AAA52500A298FA /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2338F7C025AAA52500A298FA /* NewMessageView.swift */; };
 		234578092598D64D00CBA711 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234578082598D64D00CBA711 /* ProfileHeaderView.swift */; };
 		2345780C2598DAFD00CBA711 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345780B2598DAFD00CBA711 /* UserStatView.swift */; };
 		2345780F2598DBFE00CBA711 /* ProfileActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345780E2598DBFE00CBA711 /* ProfileActionButtonView.swift */; };
@@ -71,6 +81,16 @@
 		2338F79925A9048400A298FA /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		2338F79C25AA12A900A298FA /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		2338F79F25AA16F700A298FA /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		2338F7A425AA40C400A298FA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		2338F7A825AA940100A298FA /* ConversationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsView.swift; sourceTree = "<group>"; };
+		2338F7AB25AA941700A298FA /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		2338F7AE25AA945B00A298FA /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		2338F7B125AA946800A298FA /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		2338F7B425AA947600A298FA /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		2338F7B725AA94CA00A298FA /* ConversationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
+		2338F7BA25AA94DA00A298FA /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		2338F7BD25AA954400A298FA /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		2338F7C025AAA52500A298FA /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
 		234578082598D64D00CBA711 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		2345780B2598DAFD00CBA711 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		2345780E2598DBFE00CBA711 /* ProfileActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButtonView.swift; sourceTree = "<group>"; };
@@ -141,6 +161,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2338F7A225AA409800A298FA /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				2338F7B725AA94CA00A298FA /* ConversationsViewModel.swift */,
+				2338F7BA25AA94DA00A298FA /* ChatViewModel.swift */,
+				2338F7BD25AA954400A298FA /* MessageViewModel.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		2338F7A325AA40BB00A298FA /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				2338F7A825AA940100A298FA /* ConversationsView.swift */,
+				2338F7AB25AA941700A298FA /* ConversationCell.swift */,
+				2338F7AE25AA945B00A298FA /* ChatView.swift */,
+				2338F7B125AA946800A298FA /* ChatBubble.swift */,
+				2338F7B425AA947600A298FA /* MessageView.swift */,
+				2338F7C025AAA52500A298FA /* NewMessageView.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
 		23EA5B382597A19500769D19 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +251,7 @@
 		23EA5B562597A20600769D19 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2338F7A225AA409800A298FA /* Messages */,
 				23EA5B6A2597A2EE00769D19 /* Profile */,
 				23EA5B692597A2E700769D19 /* Authentication */,
 				23EA5B682597A2E200769D19 /* Notifications */,
@@ -223,6 +267,7 @@
 		23EA5B572597A20800769D19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2338F7A325AA40BB00A298FA /* Messages */,
 				23EA5B662597A2A900769D19 /* Items */,
 				23EA5B652597A29C00769D19 /* Authentication */,
 				23EA5B642597A29700769D19 /* Notifications */,
@@ -243,6 +288,7 @@
 				23457881259E6FF400CBA711 /* Post.swift */,
 				23CA95B6259F9BEC00382F7C /* Comment.swift */,
 				23CA95C525A0E2B200382F7C /* Notification.swift */,
+				2338F7A425AA40C400A298FA /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -456,6 +502,8 @@
 				2338F79A25A9048400A298FA /* LazyView.swift in Sources */,
 				23EA5B702597A42300769D19 /* FeedView.swift in Sources */,
 				23EA5B852597B78500769D19 /* PostGridView.swift in Sources */,
+				2338F7C125AAA52500A298FA /* NewMessageView.swift in Sources */,
+				2338F7AC25AA941700A298FA /* ConversationCell.swift in Sources */,
 				234578182598FBC700CBA711 /* RegistrationView.swift in Sources */,
 				23CA95C925A0E5B200382F7C /* NotificationsViewModel.swift in Sources */,
 				2345781E2598FDFE00CBA711 /* CustomTextField.swift in Sources */,
@@ -463,6 +511,7 @@
 				23EA5B5C2597A26900769D19 /* ContentView.swift in Sources */,
 				23EA5B452597A19500769D19 /* InstagramSwiftUITutorialApp.swift in Sources */,
 				23EA5B6C2597A3E800769D19 /* MainTabView.swift in Sources */,
+				2338F7BE25AA954400A298FA /* MessageViewModel.swift in Sources */,
 				23CA95AD259E7D2500382F7C /* PostGridViewModel.swift in Sources */,
 				2345781B2598FBD400CBA711 /* ResetPasswordView.swift in Sources */,
 				23EA5B7C2597A46500769D19 /* UploadPostView.swift in Sources */,
@@ -478,22 +527,29 @@
 				2338F7A025AA16F700A298FA /* EditProfileViewModel.swift in Sources */,
 				23EA5B792597A45B00769D19 /* ProfileView.swift in Sources */,
 				2345780C2598DAFD00CBA711 /* UserStatView.swift in Sources */,
+				2338F7A525AA40C400A298FA /* Message.swift in Sources */,
 				23EA5B882597B97E00769D19 /* UserCell.swift in Sources */,
 				23EA5B822597B55E00769D19 /* SearchBar.swift in Sources */,
 				234578212598FE0700CBA711 /* CustomSecureField.swift in Sources */,
+				2338F7AF25AA945B00A298FA /* ChatView.swift in Sources */,
 				23CA95BA259F9BFC00382F7C /* CommentsView.swift in Sources */,
 				23CA95B0259E840F00382F7C /* FeedCellViewModel.swift in Sources */,
+				2338F7A925AA940100A298FA /* ConversationsView.swift in Sources */,
 				23457882259E6FF400CBA711 /* Post.swift in Sources */,
 				2345786B259B9B2F00CBA711 /* SearchViewModel.swift in Sources */,
 				23EA5B762597A45100769D19 /* NotificationsView.swift in Sources */,
 				23EA5B7F2597A91100769D19 /* FeedCell.swift in Sources */,
 				23457859259B969C00CBA711 /* User.swift in Sources */,
+				2338F7B825AA94CA00A298FA /* ConversationsViewModel.swift in Sources */,
 				2345780F2598DBFE00CBA711 /* ProfileActionButtonView.swift in Sources */,
 				234578372599514200CBA711 /* AuthViewModel.swift in Sources */,
 				2345786E259D763500CBA711 /* ProfileViewModel.swift in Sources */,
 				23EA5B8B2597B98A00769D19 /* UserListView.swift in Sources */,
 				23EA5B912598030300769D19 /* NotificationCell.swift in Sources */,
 				234578152598FBC000CBA711 /* LoginView.swift in Sources */,
+				2338F7B225AA946800A298FA /* ChatBubble.swift in Sources */,
+				2338F7B525AA947600A298FA /* MessageView.swift in Sources */,
+				2338F7BB25AA94DA00A298FA /* ChatViewModel.swift in Sources */,
 				23CA95C625A0E2B300382F7C /* Notification.swift in Sources */,
 				23CA95CC25A23EB800382F7C /* NotificationCellViewModel.swift in Sources */,
 				23CA95B7259F9BEC00382F7C /* Comment.swift in Sources */,
