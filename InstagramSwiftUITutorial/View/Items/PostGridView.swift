@@ -31,7 +31,13 @@ struct PostGridView: View {
                             .scaledToFill()
                             .frame(width: width, height: width)
                             .clipped()
-                    })
+                    }).onAppear {
+                        guard let index = viewModel.posts.firstIndex(where: { $0.id == post.id }) else { return }
+                        if index == viewModel.posts.count - 1 {
+                            print("DEBUG: Data \(viewModel.lastDoc?.data())")
+                            viewModel.fetchExplorePagePosts()
+                        }
+                    }
             }
         })
     }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 enum PostGridConfiguration {
     case explore
@@ -15,6 +16,8 @@ enum PostGridConfiguration {
 class PostGridViewModel: ObservableObject {
     @Published var posts = [Post]()
     let config: PostGridConfiguration
+    
+    var lastDoc: QueryDocumentSnapshot?
     
     init(config: PostGridConfiguration) {
         self.config = config
@@ -31,9 +34,22 @@ class PostGridViewModel: ObservableObject {
     }
     
     func fetchExplorePagePosts() {
-        COLLECTION_POSTS.getDocuments { snapshot, _ in
-            guard let documents = snapshot?.documents else { return }
-            self.posts = documents.compactMap({ try? $0.data(as: Post.self) })
+        let query = COLLECTION_POSTS.limit(to: 15).order(by: "timestamp", descending: true)
+        
+        if let last = lastDoc {
+            let next = query.start(afterDocument: last)
+            next.getDocuments { snapshot, _ in
+                guard let documents = snapshot?.documents, !documents.isEmpty else { return }
+                self.lastDoc = snapshot?.documents.last
+                self.posts.append(contentsOf: documents.compactMap({ try? $0.data(as: Post.self) }))
+            }
+        } else {
+            query.getDocuments { snapshot, _ in
+                guard let documents = snapshot?.documents else { return }
+                self.posts = documents.compactMap({ try? $0.data(as: Post.self) })
+                
+                self.lastDoc = snapshot?.documents.last
+            }
         }
     }
     
