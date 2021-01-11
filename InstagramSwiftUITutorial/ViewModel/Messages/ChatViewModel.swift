@@ -24,8 +24,8 @@ class ChatViewModel: ObservableObject {
         let query = COLLECTION_MESSAGES.document(currentUid).collection(uid)
         
         query.addSnapshotListener { snapshot, error in
-            guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }
-            self.messages = changes.compactMap({ try? $0.document.data(as: Message.self) })
+            guard let changes = snapshot?.documentChanges.filter({ $0.type == .added }) else { return }            
+            self.messages.append(contentsOf: changes.compactMap({ try? $0.document.data(as: Message.self) })) 
         }
     }
     
@@ -44,6 +44,9 @@ class ChatViewModel: ObservableObject {
                                    "id": messageID,
                                    "fromId": currentUid,
                                    "toId": uid,
+                                   "username": user.username,
+                                   "profileImageUrl": user.profileImageUrl,
+                                   "fullname": user.fullname,
                                    "timestamp": Timestamp(date: Date())]
         
         currentUserRef.setData(data)

@@ -22,6 +22,7 @@ struct CustomInputView: View {
             HStack {
                 TextField("Comment...", text: $inputText)
                     .textFieldStyle(PlainTextFieldStyle())
+                    .font(.body)
                     .frame(minHeight: 30)
                 
                 Button(action: action) {

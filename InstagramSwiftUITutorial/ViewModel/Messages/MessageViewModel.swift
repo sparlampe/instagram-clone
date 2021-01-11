@@ -12,7 +12,7 @@ struct MessageViewModel {
     
     var currentUid: String { return AuthViewModel.shared.userSession?.uid ?? "" }
     
-    var chatPartnerId: String { return message.fromId == currentUid ? message.toId : message.fromId}
+    
     
     var isFromCurrentUser: Bool { return message.fromId == currentUid }
 }

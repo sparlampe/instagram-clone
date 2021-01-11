@@ -14,46 +14,51 @@ struct ConversationsView: View {
     @ObservedObject var viewModel = ConversationsViewModel()
     
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            
-            if let user = user {
-                NavigationLink(destination: LazyView(ChatView(user: user)),
-                               isActive: $showChat,
-                               label: {} )
-            }
-            
-            ScrollView {
-                VStack {
-                    ForEach(viewModel.recentMessages) { message in
-                        NavigationLink(
-                            destination: Text("Chat"),
-                            label: {
-                                ConversationCell(message: message)
-                            })
-                    }
-                }.padding()
-            }
-            
-            HStack {
-                Spacer()
+        NavigationView {
+            ZStack(alignment: .bottomTrailing) {
                 
-                Button(action: { self.isShowingNewMessageView.toggle() }, label: {
-                    Image(systemName: "envelope")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 28, height: 28)
-                        .padding()
-                })
-                .background(Color(.systemBlue))
-                .foregroundColor(.white)
-                .clipShape(Circle())
-                .padding()
-                .sheet(isPresented: $isShowingNewMessageView, content: {
-                    NewMessageView(show: $isShowingNewMessageView, startChat: $showChat, user: $user)
-                })
+                if let user = user {
+                    NavigationLink(destination: LazyView(ChatView(user: user)),
+                                   isActive: $showChat,
+                                   label: {} )
+                }
+                
+                ScrollView {
+                    VStack {
+                        ForEach(viewModel.recentMessages) { message in
+                            NavigationLink(
+                                destination: ChatView(user: User(message: message)),
+                                label: {
+                                    ConversationCell(message: message)
+                                })
+                        }
+                    }.padding()
+                }
+                
+                HStack {
+                    Spacer()
+                    
+                    Button(action: { self.isShowingNewMessageView.toggle() }, label: {
+                        Image(systemName: "envelope")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 28, height: 28)
+                            .padding()
+                    })
+                    .background(Color(.systemBlue))
+                    .foregroundColor(.white)
+                    .clipShape(Circle())
+                    .padding()
+                    .sheet(isPresented: $isShowingNewMessageView, content: {
+                        NewMessageView(show: $isShowingNewMessageView, startChat: $showChat, user: $user)
+                    })
+                }
+                .navigationTitle("Messages")
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationTitle("Messages")
-            .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                viewModel.fetchRecentMessages()
+            }
         }
     }
 }

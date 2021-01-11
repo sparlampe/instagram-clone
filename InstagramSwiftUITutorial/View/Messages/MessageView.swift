@@ -23,6 +23,7 @@ struct MessageView: View {
                     .padding(.horizontal)
                     .padding(.leading, 100)
                     .padding(.trailing, 16)
+                    .font(.body)
             } else {
                 HStack(alignment: .bottom) {
                     KFImage(URL(string: viewModel.message.profileImageUrl))
@@ -34,6 +35,7 @@ struct MessageView: View {
                     Text(viewModel.message.text)
                         .padding()
                         .background(Color(.systemGray5))
+                        .font(.body)
                         .clipShape(ChatBubble(isFromCurrentUser: false))
                         .foregroundColor(.black)
                     
