@@ -30,6 +30,24 @@ class NotificationsViewModel: ObservableObject {
         }
     }
     
+    static func deleteNotification(toUid uid: String, type: NotificationType, postId: String? = nil) {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        
+        COLLECTION_NOTIFICATIONS.document(uid).collection("user-notifications")
+            .whereField("uid", isEqualTo: currentUid).getDocuments { snapshot, _ in
+                snapshot?.documents.forEach({ document in
+                    let notification = try? document.data(as: Notification.self)
+                    guard notification?.type == type else { return }
+                    
+                    if postId != nil {
+                        guard postId == notification?.postId else { return }
+                    }
+                    
+                    document.reference.delete()
+                })
+            }
+    }
+    
     static func uploadNotification(toUid uid: String, type: NotificationType, post: Post? = nil) {
         guard let user = AuthViewModel.shared.currentUser else { return }
         guard uid != user.id else { return }

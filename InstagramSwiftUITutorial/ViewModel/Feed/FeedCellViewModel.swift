@@ -59,6 +59,8 @@ class FeedCellViewModel: ObservableObject {
                 
                 self.post.didLike = false
                 self.post.likes -= 1
+                
+                NotificationsViewModel.deleteNotification(toUid: uid, type: .like, postId: postId)
             }
         }
     }

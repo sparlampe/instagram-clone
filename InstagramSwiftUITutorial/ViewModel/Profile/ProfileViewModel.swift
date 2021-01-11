@@ -28,6 +28,7 @@ class ProfileViewModel: ObservableObject {
         guard let uid = user.id else { return }
         UserService.unfollow(uid: uid) { _ in
             self.user.isFollowed = false
+            NotificationsViewModel.deleteNotification(toUid: uid, type: .follow)
         }
     }
     
