@@ -20,6 +20,7 @@ struct UserStatView: View {
                 .font(.system(size: 15))
         }
         .frame(width: 80, alignment: .center)
+        .foregroundColor(.black)
     }
 }
 
