@@ -41,7 +41,7 @@ struct ProfileActionButtonView: View {
                         )
                 }).cornerRadius(3)
                 
-                Button(action: {}, label: {
+                NavigationLink(destination: ChatView(user: viewModel.user)) {
                     Text("Message")
                         .font(.system(size: 14, weight: .semibold))
                         .frame(width: 172, height: 32)
@@ -50,7 +50,7 @@ struct ProfileActionButtonView: View {
                             RoundedRectangle(cornerRadius: 3)
                                 .stroke(Color.gray, lineWidth: 1)
                         )
-                })
+                }
             }
         }
     }

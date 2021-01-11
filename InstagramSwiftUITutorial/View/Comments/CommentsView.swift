@@ -25,7 +25,7 @@ struct CommentsView: View {
                 }
             }.padding(.top)
             
-            CustomInputView(inputText: $commentText, action: uploadComment)
+            CustomInputView(inputText: $commentText, placeholder: "Comment...", action: uploadComment)
         }
     }
     

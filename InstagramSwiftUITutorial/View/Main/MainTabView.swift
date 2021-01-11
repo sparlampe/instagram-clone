@@ -10,7 +10,6 @@ import SwiftUI
 struct MainTabView: View {
     let user: User
     @Binding var selectedIndex: Int
-    @State private var showMessages = false
     
     var body: some View {
         NavigationView {
@@ -74,18 +73,15 @@ struct MainTabView: View {
     }
     
     var messageLink: some View {
-        Button {
-            showMessages.toggle()
-        } label: {
-            Image(systemName: "paperplane")
-                .resizable()
-                .font(.system(size: 20, weight: .light))
-                .scaledToFit()
-                .foregroundColor(.black)
-        }.fullScreenCover(isPresented: $showMessages) { 
-            ConversationsView()
-        }
-
+        NavigationLink(
+            destination: ConversationsView(),
+            label: {
+                Image(systemName: "paperplane")
+                    .resizable()
+                    .font(.system(size: 20, weight: .light))
+                    .scaledToFit()
+                    .foregroundColor(.black)
+            })
     }
     
     var tabTitle: String {

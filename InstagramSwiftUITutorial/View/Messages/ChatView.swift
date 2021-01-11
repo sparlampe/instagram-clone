@@ -27,7 +27,7 @@ struct ChatView: View {
                 }
             }.padding(.top)
             
-            CustomInputView(inputText: $messageText, action: sendMessage)
+            CustomInputView(inputText: $messageText, placeholder: "Message...", action: sendMessage)
                 .padding()
             
         }.navigationTitle(user.username)

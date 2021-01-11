@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CustomInputView: View {
     @Binding var inputText: String
+    let placeholder: String
     
     var action: () -> Void
     
@@ -20,7 +21,7 @@ struct CustomInputView: View {
                 .padding(.bottom, 8)
             
             HStack {
-                TextField("Comment...", text: $inputText)
+                TextField(placeholder, text: $inputText)
                     .textFieldStyle(PlainTextFieldStyle())
                     .font(.body)
                     .frame(minHeight: 30)
