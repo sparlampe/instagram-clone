@@ -27,6 +27,7 @@ struct UserListView: View {
                         })
                 }
             }
+            .padding(.top)
         }
     }
 }

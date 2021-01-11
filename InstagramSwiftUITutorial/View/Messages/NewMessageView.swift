@@ -12,7 +12,7 @@ struct NewMessageView: View {
     @Binding var show: Bool
     @Binding var startChat: Bool
     @Binding var user: User?
-    @ObservedObject var viewModel = SearchViewModel()
+    @ObservedObject var viewModel = SearchViewModel(config: .newMessage)
     
     var body: some View {
         ScrollView {

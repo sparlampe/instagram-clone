@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchView: View {
     @State var searchText = ""
     @State var inSearchMode = false
-    @ObservedObject var viewModel = SearchViewModel()
+    @ObservedObject var viewModel = SearchViewModel(config: .search)
     
     var body: some View {
         
