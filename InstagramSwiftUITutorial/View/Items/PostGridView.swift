@@ -33,8 +33,7 @@ struct PostGridView: View {
                             .clipped()
                     }).onAppear {
                         guard let index = viewModel.posts.firstIndex(where: { $0.id == post.id }) else { return }
-                        if index == viewModel.posts.count - 1 {
-                            print("DEBUG: Data \(viewModel.lastDoc?.data())")
+                        if case .explore = config, index == viewModel.posts.count - 1 {
                             viewModel.fetchExplorePagePosts()
                         }
                     }

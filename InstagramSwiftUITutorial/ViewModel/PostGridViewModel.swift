@@ -15,9 +15,8 @@ enum PostGridConfiguration {
 
 class PostGridViewModel: ObservableObject {
     @Published var posts = [Post]()
-    let config: PostGridConfiguration
-    
-    var lastDoc: QueryDocumentSnapshot?
+    private let config: PostGridConfiguration
+    private var lastDoc: QueryDocumentSnapshot?
     
     init(config: PostGridConfiguration) {
         self.config = config
@@ -47,7 +46,6 @@ class PostGridViewModel: ObservableObject {
             query.getDocuments { snapshot, _ in
                 guard let documents = snapshot?.documents else { return }
                 self.posts = documents.compactMap({ try? $0.data(as: Post.self) })
-                
                 self.lastDoc = snapshot?.documents.last
             }
         }
@@ -60,18 +58,4 @@ class PostGridViewModel: ObservableObject {
             self.posts = posts.sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() })
         }
     }
-    
-    private func findMax(_ arr: [Int]) -> (Int, Int) {
-            var max = 0
-            var maxIndex = 0
-            
-            for i in 0 ..< arr.count {
-                if arr[i] < max {
-                    max = arr[i]
-                    maxIndex = i
-                }
-            }
-            
-            return (max, maxIndex)
-        }
 }
